@@ -12,3 +12,13 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_Quit_triggered()
+{
+    QApplication::quit();
+}
+
+void MainWindow::on_Open_triggered()
+{
+    statusBar()->showMessage("Open file",2000);
+}
