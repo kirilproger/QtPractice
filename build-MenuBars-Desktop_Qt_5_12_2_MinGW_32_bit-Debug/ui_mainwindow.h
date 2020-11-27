@@ -62,6 +62,7 @@ public:
         menu->addAction(Quit);
         mainToolBar->addAction(Open);
         mainToolBar->addAction(Quit);
+        mainToolBar->addSeparator();
 
         retranslateUi(MainWindow);
 

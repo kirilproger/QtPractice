@@ -41,6 +41,7 @@
    </attribute>
    <addaction name="Open"/>
    <addaction name="Quit"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="Open">
