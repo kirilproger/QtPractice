@@ -37,6 +37,7 @@ void MainWindow::setWhite(){
     ui->a32->setIcon(white);
     ui->a33->setIcon(white);
     btns.clear();
+    WinGame=0;
 }
 
 void MainWindow::IfWin(QToolButton *a, QToolButton *b, QToolButton *c){
@@ -45,6 +46,7 @@ void MainWindow::IfWin(QToolButton *a, QToolButton *b, QToolButton *c){
     QPixmap pix3(":/res/wincross.png");
     QIcon wincross(pix3);
     if(btns[a]>0 && btns[a]==btns[b] && btns[b]==btns[c]){
+        WinGame=true;
         if(btns[a]==1){
             a->setIcon(winzero);
             b->setIcon(winzero);
@@ -58,7 +60,7 @@ void MainWindow::IfWin(QToolButton *a, QToolButton *b, QToolButton *c){
 }
 void MainWindow::btnClicked(){
      QToolButton* buttonSender = qobject_cast<QToolButton*>(sender());
-     if(btns[buttonSender]>0){
+     if(btns[buttonSender]>0 || WinGame){
         return;
      }
     if(k%2==0){

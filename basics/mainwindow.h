@@ -30,6 +30,7 @@ public:
 private:
     Ui::MainWindow *ui;
     int k=0;
+    bool WinGame=0;
     QMap<QWidget*,int>btns;
     void IfWin(QToolButton *a, QToolButton *b, QToolButton *c);
 private slots:
