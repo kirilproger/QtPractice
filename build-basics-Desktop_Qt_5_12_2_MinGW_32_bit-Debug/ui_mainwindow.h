@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -23,6 +24,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *actrest;
     QWidget *centralWidget;
     QToolButton *a11;
     QToolButton *a12;
@@ -42,6 +44,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(405, 440);
+        actrest = new QAction(MainWindow);
+        actrest->setObjectName(QString::fromUtf8("actrest"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         a11 = new QToolButton(centralWidget);
@@ -103,6 +107,8 @@ public:
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         MainWindow->setStatusBar(statusBar);
 
+        mainToolBar->addAction(actrest);
+
         retranslateUi(MainWindow);
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -111,6 +117,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        actrest->setText(QApplication::translate("MainWindow", "RESTART", nullptr));
         a11->setText(QApplication::translate("MainWindow", "...", nullptr));
         a12->setText(QApplication::translate("MainWindow", "...", nullptr));
         a13->setText(QApplication::translate("MainWindow", "...", nullptr));

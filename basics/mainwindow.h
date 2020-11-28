@@ -10,6 +10,7 @@
 #include<iostream>
 #include<string>
 #include<QMap>
+#include<QAction>
 #include<QToolButton>
 using namespace std;
 namespace Ui {
@@ -33,6 +34,7 @@ private:
     void IfWin(QToolButton *a, QToolButton *b, QToolButton *c);
 private slots:
     void btnClicked();
+    void setWhite();
 };
 
 #endif // MAINWINDOW_H

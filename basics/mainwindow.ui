@@ -236,8 +236,14 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actrest"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actrest">
+   <property name="text">
+    <string>RESTART</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

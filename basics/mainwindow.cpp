@@ -6,6 +6,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWhite();
+    connect(ui->a11,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a12,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a13,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a21,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a22,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a23,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a31,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a32,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->a33,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    connect(ui->actrest,&QAction::triggered,this,&MainWindow::setWhite);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::setWhite(){
     QPixmap pix1(":/res/white.png");
     QIcon white(pix1);
     ui->a11->setIcon(white);
@@ -17,22 +36,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->a31->setIcon(white);
     ui->a32->setIcon(white);
     ui->a33->setIcon(white);
-    connect(ui->a11,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a12,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a13,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a21,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a22,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a23,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a31,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a32,&QPushButton::clicked,this,&MainWindow::btnClicked);
-    connect(ui->a33,&QPushButton::clicked,this,&MainWindow::btnClicked);
+    btns.clear();
 }
-
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-
 
 void MainWindow::IfWin(QToolButton *a, QToolButton *b, QToolButton *c){
     QPixmap pix2(":/res/winzero.png");
