@@ -33,15 +33,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::IfWin(QToolButton *a, QToolButton *b, QToolButton *c){
+    QPixmap pix2(":/res/winzero.png");
+    QIcon winzero(pix2);
+    QPixmap pix3(":/res/wincross.png");
+    QIcon wincross(pix3);
+    if(btns[a]>0 && btns[a]==btns[b] && btns[b]==btns[c]){
+        if(btns[a]==1){
+            a->setIcon(winzero);
+            b->setIcon(winzero);
+            c->setIcon(winzero);
+        }else{
+            a->setIcon(wincross);
+            b->setIcon(wincross);
+            c->setIcon(wincross);
+        }
+    }
+}
 void MainWindow::btnClicked(){
      QToolButton* buttonSender = qobject_cast<QToolButton*>(sender());
-    /*if(!buttonSender->isChecked()){
-        return;
-    }*/
-     QPixmap pix2(":/res/winzero.png");
-     QIcon winzero(pix2);
-     QPixmap pix3(":/res/wincross.png");
-     QIcon wincross(pix3);
      if(btns[buttonSender]>0){
         return;
      }
@@ -50,24 +61,25 @@ void MainWindow::btnClicked(){
         QIcon cross(pix1);
         buttonSender->setIcon(cross);
         btns[buttonSender]=2;
+        k++;
     }else{
         QPixmap pix1(":/res/zero.png");
         QIcon zero(pix1);
         buttonSender->setIcon(zero);
         btns[buttonSender]=1;
+        k++;
     }
-    if(btns[ui->a11]>0 && btns[ui->a11]==btns[ui->a12] && btns[ui->a12]==btns[ui->a13]){
-        if(btns[ui->a11]==1){
-            ui->a11->setIcon(winzero);
-            ui->a12->setIcon(winzero);
-            ui->a13->setIcon(winzero);
-        }else{
-            ui->a11->setIcon(wincross);
-            ui->a12->setIcon(wincross);
-            ui->a13->setIcon(wincross);
-        }
-    }
-
-    k++;
+    //if win
+    //horizontal
+    IfWin(ui->a11,ui->a12,ui->a13);
+    IfWin(ui->a21,ui->a22,ui->a23);
+    IfWin(ui->a31,ui->a32,ui->a33);
+    //vertical
+    IfWin(ui->a11,ui->a21,ui->a31);
+    IfWin(ui->a12,ui->a22,ui->a32);
+    IfWin(ui->a13,ui->a23,ui->a33);
+    //diagonals
+    IfWin(ui->a11,ui->a22,ui->a33);
+    IfWin(ui->a13,ui->a22,ui->a31);
 }
 
