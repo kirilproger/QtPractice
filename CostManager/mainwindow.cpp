@@ -9,9 +9,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->addButton->setIcon(QIcon(":/rec/img/add.png"));
     ui->getButton->setIcon(QIcon(":/rec/img/get.png"));
     ui->tuneButton->setIcon(QIcon(":/rec/img/tune.png"));
+    sWindow = new AddWindow();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::on_addButton_clicked()
+{
+    sWindow->show();
 }
