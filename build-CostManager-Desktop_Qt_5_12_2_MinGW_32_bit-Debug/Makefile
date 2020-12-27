@@ -247,6 +247,7 @@ Makefile: ../CostManager/CostManager.pro E:/Qt/5.12.2/mingw73_32/mkspecs/win32-g
 		../CostManager/CostManager.pro \
 		E:/Qt/5.12.2/mingw73_32/lib/Qt5Widgets.prl \
 		E:/Qt/5.12.2/mingw73_32/lib/Qt5Gui.prl \
+		E:/Qt/5.12.2/mingw73_32/lib/Qt5Sql.prl \
 		E:/Qt/5.12.2/mingw73_32/lib/Qt5Core.prl \
 		E:/Qt/5.12.2/mingw73_32/lib/qtmaind.prl
 	$(QMAKE) -o Makefile ..\CostManager\CostManager.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -434,6 +435,7 @@ E:/Qt/5.12.2/mingw73_32/mkspecs/features/lex.prf:
 ../CostManager/CostManager.pro:
 E:/Qt/5.12.2/mingw73_32/lib/Qt5Widgets.prl:
 E:/Qt/5.12.2/mingw73_32/lib/Qt5Gui.prl:
+E:/Qt/5.12.2/mingw73_32/lib/Qt5Sql.prl:
 E:/Qt/5.12.2/mingw73_32/lib/Qt5Core.prl:
 E:/Qt/5.12.2/mingw73_32/lib/qtmaind.prl:
 qmake: FORCE

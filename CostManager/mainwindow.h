@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include<addwindow.h>
-
+#include<QSqlDatabase>
+#include<QtSql>
 namespace Ui {
 class MainWindow;
 }
