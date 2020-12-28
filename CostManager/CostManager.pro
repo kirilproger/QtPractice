@@ -44,3 +44,13 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     rec.qrc
+
+win32: LIBS += -L$$PWD/../../../../Downloads/mysql-connector-odbc-noinstall-8.0.22-winx64/mysql-connector-odbc-noinstall-8.0.22-winx64/lib/ -lmyodbc8a
+
+INCLUDEPATH += $$PWD/../../../../Downloads/mysql-connector-odbc-noinstall-8.0.22-winx64/mysql-connector-odbc-noinstall-8.0.22-winx64
+DEPENDPATH += $$PWD/../../../../Downloads/mysql-connector-odbc-noinstall-8.0.22-winx64/mysql-connector-odbc-noinstall-8.0.22-winx64
+
+win32: LIBS += -L$$PWD/../../../../Downloads/mysql-connector-c-6.1.2-winx64/mysql-connector-c-6.1.2-winx64/lib/ -llibmysql
+
+INCLUDEPATH += $$PWD/../../../../Downloads/mysql-connector-c-6.1.2-winx64/mysql-connector-c-6.1.2-winx64/include
+DEPENDPATH += $$PWD/../../../../Downloads/mysql-connector-c-6.1.2-winx64/mysql-connector-c-6.1.2-winx64/include
