@@ -6,19 +6,21 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->addButton->setIcon(QIcon(":/rec/img/add.png"));
-    ui->getButton->setIcon(QIcon(":/rec/img/get.png"));
-    ui->tuneButton->setIcon(QIcon(":/rec/img/tune.png"));
-    sWindow = new AddWindow();
+    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
+        db.setHostName("localhost");
+        db.setDatabaseName("testbase");
+        db.setUserName("root");
+        db.setPassword("");
+        if (!db.open()) {
+            qDebug() << "Database error occurred";
+            qDebug() << db.lastError();
+        }else{
+            qDebug() << "Database connected!!!!";
+        }
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-
-void MainWindow::on_addButton_clicked()
-{
-    sWindow->show();
 }

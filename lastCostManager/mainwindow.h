@@ -2,12 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSql/QSql>
-#include <QtSql/QSqlDatabase>
-#include <QtSql/QSqlDriver>
-#include <QtSql/QSqlQuery>
-#include <QDebug>
-#include <QSqlError>
+#include<addwindow.h>
+
 namespace Ui {
 class MainWindow;
 }
@@ -19,9 +15,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+private slots:
+    void on_addButton_clicked();
 
 private:
     Ui::MainWindow *ui;
+    AddWindow *sWindow;
 };
 
 #endif // MAINWINDOW_H
