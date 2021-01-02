@@ -25,16 +25,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        addwindow.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        tunewindow.cpp
 
 HEADERS += \
-        mainwindow.h
+        addwindow.h \
+        mainwindow.h \
+        tunewindow.h
 
 FORMS += \
-        mainwindow.ui
+        addwindow.ui \
+        mainwindow.ui \
+        tunewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    rec.qrc

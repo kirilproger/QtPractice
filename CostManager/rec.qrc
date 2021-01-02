@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>img/add.png</file>
+        <file>img/get.png</file>
+        <file>img/tune.png</file>
+    </qresource>
+</RCC>
