@@ -366,6 +366,11 @@
           </item>
           <item>
            <property name="text">
+            <string>Одежда</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Другое</string>
            </property>
           </item>
