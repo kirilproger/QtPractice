@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     tWindow = new TuneWindow();
     default_connection();
     QSqlQuery query;
-    query.exec("CREATE TABLE PRODUCTS(ID INT,NAME VARCHAR(20), AMOUNT INT,TYPE INT, PRIMARY KEY(ID))");
+    query.exec("CREATE TABLE SPENDING(ID INT,THEDATE DATE,NAME VARCHAR(20),PRICE INT, AMOUNT INT,TYPE VARCHAR(20), PRIMARY KEY(ID))");
 }
 
 MainWindow::~MainWindow()
