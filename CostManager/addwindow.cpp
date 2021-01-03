@@ -23,14 +23,14 @@ void addwindow::on_pushButton_clicked()
     QSqlQuery addquery;
     QString day,month,year;
     QString name,type;
-    int price=0,amount=0;
+    double price=0,amount=0;
     day = ui->dayBox->currentText();
     month = ui->monthBox->currentText();
     year = ui->yearBox->currentText();
     name = ui->NameEdit->text();
     type = ui->typeBox->currentText();
-    price = ui->PriceEdit->text().toInt();
-    amount = ui->AmountEdit->text().toInt();
+    price = ui->PriceEdit->text().toDouble();
+    amount = ui->AmountEdit->text().toDouble();
     addquery.prepare("INSERT INTO spending (ID,THEDATE,NAME,PRICE,AMOUNT,COST,TYPE)"
                      "VALUES(:ID, :THEDATE, :NAME, :PRICE, :AMOUNT,:COST, :TYPE)");
     addquery.bindValue(":ID",lidx);
