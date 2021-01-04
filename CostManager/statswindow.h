@@ -2,7 +2,12 @@
 #define STATSWINDOW_H
 
 #include <QMainWindow>
-
+#include <QtSql/QSql>
+#include <QtSql/QSqlDatabase>
+#include <QtSql/QSqlDriver>
+#include <QtSql/QSqlQuery>
+#include <QDebug>
+#include <QSqlError>
 namespace Ui {
 class statsWindow;
 }

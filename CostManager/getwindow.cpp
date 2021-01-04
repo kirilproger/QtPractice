@@ -22,7 +22,7 @@ void getWindow::on_pushButton_clicked()
 }
 void getWindow::onButtonSend(){
     QString fDate,sDate;
-    fDate=ui->firstDayBox->currentText()+"-"+ui->firstMonthBox->currentText()+"-"+ui->firstYearBox->currentText();
-    sDate=ui->secondDayBox->currentText()+"-"+ui->secondMonthBox->currentText()+"-"+ui->secondYearBox->currentText();
+    fDate=ui->firstYearBox->currentText()+"-"+ui->firstMonthBox->currentText()+"-"+ui->firstDayBox->currentText();
+    sDate=ui->secondYearBox->currentText()+"-"+ui->secondMonthBox->currentText()+"-"+ui->secondDayBox->currentText();
     emit sendData(fDate,sDate);
 }
