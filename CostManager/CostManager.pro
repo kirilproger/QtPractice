@@ -26,17 +26,20 @@ CONFIG += c++11
 
 SOURCES += \
         addwindow.cpp \
+        getwindow.cpp \
         main.cpp \
         mainwindow.cpp \
         tunewindow.cpp
 
 HEADERS += \
         addwindow.h \
+        getwindow.h \
         mainwindow.h \
         tunewindow.h
 
 FORMS += \
         addwindow.ui \
+        getwindow.ui \
         mainwindow.ui \
         tunewindow.ui
 

@@ -10,6 +10,7 @@
 #include <QSqlError>
 #include<addwindow.h>
 #include<tunewindow.h>
+#include<getwindow.h>
 namespace Ui {
 class MainWindow;
 }
@@ -27,10 +28,13 @@ private slots:
     void on_tuneButton_clicked();
     void default_connection();
 
+    void on_getButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     addwindow *sWindow;
     TuneWindow *tWindow;
+    getWindow *gWindow;
 };
 
 #endif // MAINWINDOW_H
