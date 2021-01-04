@@ -14,8 +14,7 @@ class statsWindow : public QMainWindow
 public:
     explicit statsWindow(QWidget *parent = nullptr);
     ~statsWindow();
-    void setDate(QString a, QString b);
-
+    void recieveData(QString a,QString b);
 private slots:
     void on_pushButton_clicked();
 

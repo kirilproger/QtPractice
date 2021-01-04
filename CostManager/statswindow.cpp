@@ -1,11 +1,12 @@
 #include "statswindow.h"
 #include "ui_statswindow.h"
-
+#include<QDebug>
 statsWindow::statsWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::statsWindow)
 {
     ui->setupUi(this);
+    ui->periodLabel->setText(this->firstDate+"-"+this->secondDate);
 
 }
 
@@ -19,7 +20,6 @@ void statsWindow::on_pushButton_clicked()
     this->close();
 }
 
-void statsWindow::setDate(QString a, QString b){
-    this->firstDate=a;
-    this->secondDate=b;
+void statsWindow::recieveData(QString a,QString b){
+    ui->periodLabel->setText(a+"---"+b);
 }
