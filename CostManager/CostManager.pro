@@ -29,18 +29,21 @@ SOURCES += \
         getwindow.cpp \
         main.cpp \
         mainwindow.cpp \
+        statswindow.cpp \
         tunewindow.cpp
 
 HEADERS += \
         addwindow.h \
         getwindow.h \
         mainwindow.h \
+        statswindow.h \
         tunewindow.h
 
 FORMS += \
         addwindow.ui \
         getwindow.ui \
         mainwindow.ui \
+        statswindow.ui \
         tunewindow.ui
 
 # Default rules for deployment.

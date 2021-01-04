@@ -11,6 +11,7 @@
 #include<addwindow.h>
 #include<tunewindow.h>
 #include<getwindow.h>
+#include<statswindow.h>
 namespace Ui {
 class MainWindow;
 }
