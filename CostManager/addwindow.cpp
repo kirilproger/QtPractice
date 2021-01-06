@@ -42,3 +42,8 @@ void addwindow::on_pushButton_clicked()
     addquery.bindValue(":TYPE",type);
     addquery.exec();
 }
+
+void addwindow::on_pushButton_2_clicked()
+{
+
+}
