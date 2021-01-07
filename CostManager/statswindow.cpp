@@ -29,4 +29,7 @@ void statsWindow::recieveData(QString a,QString b){
     query.exec("SELECT SUM(COST) FROM spending WHERE THEDATE >= '"+a+"' AND THEDATE <= '"+b+"' AND TYPE= 'продукты'");
     query.first();
     ui->ProdCost->setText(query.value(0).toString());
+    query.exec("SELECT SUM(TOTAL) FROM income WHERE THEDATE >= '"+a+"' AND THEDATE <= '"+b+"'");
+    query.first();
+    ui->TotalCost->setText(query.value(0).toString());
 }
