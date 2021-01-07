@@ -45,5 +45,26 @@ void addwindow::on_pushButton_clicked()
 
 void addwindow::on_pushButton_2_clicked()
 {
-
+    QSqlQuery lastindex;
+    lastindex.exec("SELECT MAX(ID) FROM income");
+    int lidx;
+    lastindex.first();
+    lidx=lastindex.value(0).toInt()+1;
+    QSqlQuery addtotal;
+    QString day,month,year;
+    QString description;
+    double total=0;
+    day = ui->dayBox_2->currentText();
+    month = ui->monthBox_2->currentText();
+    year = ui->yearBox_2->currentText();
+    description = ui->aboutLine->text();
+    total = ui->totalLine->text().toDouble();
+    addtotal.prepare("INSERT INTO income (ID,THEDATE,TOTAL,ABOUT)"
+                     "VALUES(:ID, :THEDATE, :TOTAL, :ABOUT)");
+    addtotal.bindValue(":ID",lidx);
+    addtotal.bindValue(":THEDATE",year+"-"+month+"-"+day);
+    addtotal.bindValue(":TOTAL",total);
+    addtotal.bindValue(":ABOUT",description);
+    addtotal.exec();
+    qDebug()<<lidx<<" "<<description<<" "<<year+"-"+month+"-"+day;
 }
