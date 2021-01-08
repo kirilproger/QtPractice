@@ -29,12 +29,6 @@ void MainWindow::default_connection(){
     db.setDatabaseName("testbase");
     db.setUserName("root");
     db.setPassword("");
-    if (!db.open()) {
-        qDebug() << "Database error occurred";
-        qDebug() << db.lastError();
-    }else{
-        qDebug() << "Database connected";
-    }
 }
 
 void MainWindow::on_addButton_clicked()
