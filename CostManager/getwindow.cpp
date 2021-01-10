@@ -37,7 +37,7 @@ getWindow::getWindow(QWidget *parent) :
     chart->legend()->setAlignment(Qt::AlignBottom);
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
-    ui->stackedWidget->addWidget(chartView);
+    this->setCentralWidget(chartView);
 }
 
 getWindow::~getWindow()
