@@ -19,12 +19,12 @@
      <widget class="QListWidget" name="listWidget">
       <item>
        <property name="text">
-        <string>Отчёт за период</string>
+        <string>График</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>График</string>
+        <string>Отчёт за период</string>
        </property>
       </item>
      </widget>
@@ -643,5 +643,22 @@
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>61</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>202</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

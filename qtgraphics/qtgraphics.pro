@@ -1,14 +1,15 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2020-12-29T14:33:33
+# Project created by QtCreator 2021-01-10T15:25:15
 #
 #-------------------------------------------------
 
 QT       += core gui
-QT += sql
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 QT += charts
-TARGET = costmanager
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+
+TARGET = qtgraphics
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,31 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-        addwindow.cpp \
-        getwindow.cpp \
         main.cpp \
-        mainwindow.cpp \
-        statswindow.cpp \
-        tunewindow.cpp
+        mainwindow.cpp
 
 HEADERS += \
-        addwindow.h \
-        getwindow.h \
-        mainwindow.h \
-        statswindow.h \
-        tunewindow.h
+        mainwindow.h
 
 FORMS += \
-        addwindow.ui \
-        getwindow.ui \
-        mainwindow.ui \
-        statswindow.ui \
-        tunewindow.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-
-RESOURCES += \
-    rec.qrc
