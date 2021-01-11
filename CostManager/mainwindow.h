@@ -13,6 +13,7 @@
 #include<getwindow.h>
 #include<statswindow.h>
 #include<choicewindow.h>
+#include<chartwindow.h>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtCharts/QChartView>
