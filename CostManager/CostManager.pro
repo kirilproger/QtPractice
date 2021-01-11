@@ -26,6 +26,8 @@ CONFIG += c++11
 
 SOURCES += \
         addwindow.cpp \
+        chartwindow.cpp \
+        choicewindow.cpp \
         getwindow.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -34,6 +36,8 @@ SOURCES += \
 
 HEADERS += \
         addwindow.h \
+        chartwindow.h \
+        choicewindow.h \
         getwindow.h \
         mainwindow.h \
         statswindow.h \
@@ -41,6 +45,8 @@ HEADERS += \
 
 FORMS += \
         addwindow.ui \
+        chartwindow.ui \
+        choicewindow.ui \
         getwindow.ui \
         mainwindow.ui \
         statswindow.ui \

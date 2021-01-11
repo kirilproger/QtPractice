@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tuneButton->setIcon(QIcon(":/res/img/tune.png"));
     sWindow = new addwindow();
     tWindow = new TuneWindow();
-    gWindow = new getWindow();
+    cWindow = new choiceWindow();
     default_connection();
     QSqlQuery query;
     query.exec("CREATE TABLE SPENDING(ID INT,THEDATE DATE,NAME VARCHAR(20),PRICE DOUBLE, AMOUNT DOUBLE,COST DOUBLE,TYPE VARCHAR(20), PRIMARY KEY(ID))");
@@ -43,5 +43,5 @@ void MainWindow::on_tuneButton_clicked()
 
 void MainWindow::on_getButton_clicked()
 {
-    gWindow->show();
+    cWindow->show();
 }

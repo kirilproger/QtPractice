@@ -12,6 +12,7 @@
 #include<tunewindow.h>
 #include<getwindow.h>
 #include<statswindow.h>
+#include<choicewindow.h>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtCharts/QChartView>
@@ -45,7 +46,7 @@ private:
     Ui::MainWindow *ui;
     addwindow *sWindow;
     TuneWindow *tWindow;
-    getWindow *gWindow;
+    choiceWindow *cWindow;
 };
 
 #endif // MAINWINDOW_H
