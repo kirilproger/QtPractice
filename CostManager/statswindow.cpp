@@ -25,11 +25,26 @@ void statsWindow::recieveData(QString a,QString b){
     QSqlQuery query;
     query.exec("SELECT SUM(COST) FROM spending WHERE THEDATE >= '"+a+"' AND THEDATE <= '"+b+"'");
     query.first();
-    ui->SumCost->setText(query.value(0).toString());
+    double num = query.value(0).toDouble();
+    if(num==NULL){
+        ui->SumCost->setText("0");
+    }else{
+        ui->SumCost->setText(query.value(0).toString());
+    }
     query.exec("SELECT SUM(COST) FROM spending WHERE THEDATE >= '"+a+"' AND THEDATE <= '"+b+"' AND TYPE= 'продукты'");
     query.first();
-    ui->ProdCost->setText(query.value(0).toString());
+    num = query.value(0).toDouble();
+    if(num==NULL){
+        ui->SumCost->setText("0");
+    }else{
+        ui->ProdCost->setText(query.value(0).toString());
+    }
     query.exec("SELECT SUM(TOTAL) FROM income WHERE THEDATE >= '"+a+"' AND THEDATE <= '"+b+"'");
     query.first();
-    ui->TotalCost->setText(query.value(0).toString());
+    num = query.value(0).toDouble();
+    if(num==NULL){
+        ui->SumCost->setText("0");
+    }else{
+        ui->TotalCost->setText(query.value(0).toString());
+    }
 }
