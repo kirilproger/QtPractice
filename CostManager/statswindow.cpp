@@ -8,6 +8,7 @@ statsWindow::statsWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->periodLabel->setText(this->firstDate+"-"+this->secondDate);
 
+
 }
 
 statsWindow::~statsWindow()

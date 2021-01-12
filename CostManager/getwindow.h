@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include<statswindow.h>
+#include<chartwindow.h>
 #include <QtSql/QSql>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlDriver>

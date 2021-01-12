@@ -18,6 +18,8 @@
 #include <QtCharts/QBarCategoryAxis>
 #include <QtCharts/QValueAxis>
 #include<QBarSet>
+#include<QDebug>
+#include<QDate>
 QT_CHARTS_USE_NAMESPACE
 namespace Ui {
 class chartWindow;
