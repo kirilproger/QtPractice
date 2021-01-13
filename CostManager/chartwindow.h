@@ -2,7 +2,6 @@
 #define CHARTWINDOW_H
 
 #include <QMainWindow>
-#include<statswindow.h>
 #include <QtSql/QSql>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlDriver>
@@ -32,6 +31,8 @@ class chartWindow : public QMainWindow
 public:
     explicit chartWindow(QWidget *parent = nullptr);
     ~chartWindow();
+public slots:
+     void showchart();
 
 private:
     Ui::chartWindow *ui;

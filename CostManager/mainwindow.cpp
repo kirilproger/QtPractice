@@ -6,13 +6,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    default_connection();
     ui->addButton->setIcon(QIcon(":/res/img/add.png"));
     ui->getButton->setIcon(QIcon(":/res/img/get.png"));
     ui->tuneButton->setIcon(QIcon(":/res/img/tune.png"));
     sWindow = new addwindow();
     tWindow = new TuneWindow();
     cWindow = new choiceWindow();
-    default_connection();
     QSqlQuery query;
     query.exec("CREATE TABLE spending(ID INT,THEDATE DATE,NAME VARCHAR(20),PRICE DOUBLE, AMOUNT DOUBLE,COST DOUBLE,TYPE VARCHAR(20), PRIMARY KEY(ID))");
     query.exec("CREATE TABLE income(ID INT,THEDATE DATE, TOTAL DOUBLE,ABOUT VARCHAR(20),PRIMARY KEY(ID))");

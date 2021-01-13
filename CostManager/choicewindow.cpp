@@ -8,6 +8,7 @@ choiceWindow::choiceWindow(QWidget *parent) :
     ui->setupUi(this);
     gWindow = new getWindow();
     cWindow = new chartWindow();
+    connect(ui->toolButton_2, &QToolButton::clicked, cWindow, &chartWindow::showchart);
 }
 
 choiceWindow::~choiceWindow()
