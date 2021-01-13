@@ -26,7 +26,7 @@ void chartWindow::showchart()
                 iday=QString::number(i);
             }
             QSqlQuery query;
-            query.exec("SELECT SUM(COST) FROM spending WHERE THEDATE >= "+nowdate+"-"+iday+"-01 AND THEDATE <= "+nowdate+"-"+iday+"-31");
+            query.exec("SELECT SUM(COST) FROM spending WHERE THEDATE >= '"+nowdate+"-"+iday+"-01' AND THEDATE <= '"+nowdate+"-"+iday+"-31'");
             query.first();
             double num = query.value(0).toDouble();
             if(num==NULL){
