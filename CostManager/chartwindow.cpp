@@ -17,6 +17,7 @@ void chartWindow::showchart()
     double maxcost=0;
         QString nowdate=QDate::currentDate().toString("yyyy");
         QVector<double>months(12);
+        QVector<double>incomes(12);
         for(int i=1;i<13;i++){
             QString iday;
             if(i<10){
@@ -34,14 +35,26 @@ void chartWindow::showchart()
             }else{
                 months[i-1]=query.value(0).toDouble();
             }
-            qDebug()<<months[i-1]<<endl;
+            //qDebug()<<months[i-1]<<endl;
             if(maxcost<months[i-1])maxcost=months[i-1];
+            //income
+            query.exec("SELECT SUM(TOTAL) FROM income WHERE THEDATE >= '"+nowdate+"-"+iday+"-01' AND THEDATE <= '"+nowdate+"-"+iday+"-31'");
+            query.first();
+            num = query.value(0).toDouble();
+            if(num==NULL){
+                incomes[i-1]=0;
+            }else{
+                incomes[i-1]=query.value(0).toDouble();
+            }
+            //qDebug()<<months[i-1]<<endl;
+            if(maxcost<incomes[i-1])maxcost=incomes[i-1];
         }
         QBarSet *set0 = new QBarSet("Расход");
         QBarSet *set1 = new QBarSet("Приход");
         *set0 << months[0] << months[1] << months[2] << months[3] << months[4] << months[5] << months[6]
               << months[7] << months[8] << months[9] << months[10] << months[11];
-        *set1 << 5 << 0 << 0 << 4 << 0 << 7 << 1 << 2 << 3 << 4 << 5 << 6;
+        *set1 << incomes[0] << incomes[1] << incomes[2] << incomes[3] << incomes[4] << incomes[5] << incomes[6]
+              << incomes[7] << incomes[8] << incomes[9] << incomes[10] << incomes[11];
         QBarSeries *series = new QBarSeries();
         series->append(set0);
         series->append(set1);
