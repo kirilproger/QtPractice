@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtCharts>
 #include <QtCharts/QChartGlobal>
+#include<QPointer>
 using namespace QtCharts;
 namespace Ui {
 class MainWindow;
