@@ -48,7 +48,7 @@ OutputWindow::OutputWindow(QWidget *parent) :
 
     QDateTimeAxis *axisX = new QDateTimeAxis;
     axisX->setTickCount(dates.size());
-    axisX->setFormat("yyyy MMM dd");
+    axisX->setFormat("dd MMM");
     axisX->setTitleText("Date");
     chart->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
