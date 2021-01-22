@@ -23,7 +23,7 @@ OutputWindow::OutputWindow(QWidget *parent) :
         double value = query.value(0).toDouble();
         QString date = query.value(1).toString();
         QDateTime temp = QDateTime::fromString(date,"yyyy-MM-dd");
-        qDebug()<<temp<<endl;
+        //qDebug()<<temp<<endl;
         //qDebug()<<temp<<endl;
         dates.push_back(temp);
         values.push_back(value);
@@ -44,7 +44,7 @@ OutputWindow::OutputWindow(QWidget *parent) :
     QChart *chart = new QChart();
     chart->addSeries(series);
     chart->legend()->hide();
-    chart->setTitle("Вес Бати");
+    chart->setTitle("Weight graph");
 
     QDateTimeAxis *axisX = new QDateTimeAxis;
     axisX->setTickCount(dates.size());
