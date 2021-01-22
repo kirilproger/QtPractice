@@ -12,12 +12,15 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtCharts/QChartView>
-#include <QtCharts/QBarSeries>
+#include <QtCharts/QLineSeries>
 #include <QtCharts/QBarSet>
 #include <QtCharts/QLegend>
 #include <QtCharts/QBarCategoryAxis>
 #include <QtCharts/QValueAxis>
 #include<QBarSet>
+#include<QDateTime>
+#include <QtCharts/QDateTimeAxis>
+QT_CHARTS_USE_NAMESPACE
 namespace Ui {
 class OutputWindow;
 }
