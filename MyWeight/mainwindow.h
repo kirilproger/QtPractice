@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include<inputwindow.h>
+#include<outputwindow.h>
 #include <QtSql/QSql>
 #include <QtSql/QSqlDatabase>
 #include <QtSql/QSqlDriver>
@@ -29,6 +30,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     InputWindow *iWindow;
+    OutputWindow *oWindow;
 };
 
 #endif // MAINWINDOW_H

@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     iWindow = new InputWindow();
+    oWindow = new OutputWindow();
 }
 
 MainWindow::~MainWindow()
@@ -21,5 +22,5 @@ void MainWindow::on_InputButton_clicked()
 
 void MainWindow::on_ProgressButton_clicked()
 {
-
+    oWindow->show();
 }
