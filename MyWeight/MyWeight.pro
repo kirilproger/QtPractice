@@ -25,13 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        inputwindow.cpp \
         main.cpp \
         mainwindow.cpp
 
 HEADERS += \
+        inputwindow.h \
         mainwindow.h
 
 FORMS += \
+        inputwindow.ui \
         mainwindow.ui
 
 # Default rules for deployment.

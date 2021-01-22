@@ -6,9 +6,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    iWindow = new InputWindow();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_InputButton_clicked()
+{
+    iWindow->show();
+}
+
+void MainWindow::on_ProgressButton_clicked()
+{
+
 }
