@@ -28,17 +28,20 @@ SOURCES += \
         inputwindow.cpp \
         main.cpp \
         mainwindow.cpp \
-        outputwindow.cpp
+        outputwindow.cpp \
+        tunewindow.cpp
 
 HEADERS += \
         inputwindow.h \
         mainwindow.h \
-        outputwindow.h
+        outputwindow.h \
+        tunewindow.h
 
 FORMS += \
         inputwindow.ui \
         mainwindow.ui \
-        outputwindow.ui
+        outputwindow.ui \
+        tunewindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

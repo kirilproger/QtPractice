@@ -6,12 +6,6 @@ InputWindow::InputWindow(QWidget *parent) :
     ui(new Ui::InputWindow)
 {
     ui->setupUi(this);
-    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("localhost");
-    db.setDatabaseName("myweight");
-    db.setUserName("root");
-    db.setPassword("");
-    db.open();
     QSqlQuery createTable;
     createTable.exec("CREATE TABLE weight(ID int, THEDATE date NOT NULL, VALUE double NOT NULL, UNIQUE(THEDATE),PRIMARY KEY(ID))");
 }
