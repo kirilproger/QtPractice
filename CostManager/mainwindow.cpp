@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     tWindow = new TuneWindow();
     cWindow = new choiceWindow();
     QSqlQuery query;
+
     query.exec("CREATE TABLE spending(ID INT,THEDATE DATE,NAME VARCHAR(20),PRICE DOUBLE, AMOUNT DOUBLE,COST DOUBLE,TYPE VARCHAR(20), PRIMARY KEY(ID))");
     query.exec("CREATE TABLE income(ID INT,THEDATE DATE, TOTAL DOUBLE,ABOUT VARCHAR(20),PRIMARY KEY(ID))");
 
@@ -30,6 +31,7 @@ void MainWindow::default_connection(){
     db.setDatabaseName("testbase");
     db.setUserName("root");
     db.setPassword("");
+    db.open();
 }
 
 void MainWindow::on_addButton_clicked()
