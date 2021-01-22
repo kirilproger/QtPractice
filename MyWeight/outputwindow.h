@@ -9,6 +9,15 @@
 #include <QtSql/QSqlQuery>
 #include <QDebug>
 #include <QSqlError>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QMainWindow>
+#include <QtCharts/QChartView>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QLegend>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QValueAxis>
+#include<QBarSet>
 namespace Ui {
 class OutputWindow;
 }

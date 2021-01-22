@@ -12,6 +12,8 @@ InputWindow::InputWindow(QWidget *parent) :
     db.setUserName("root");
     db.setPassword("");
     db.open();
+    QSqlQuery createTable;
+    createTable.exec("CREATE TABLE weight(ID int, THEDATE date NOT NULL, VALUE double NOT NULL, UNIQUE(THEDATE),PRIMARY KEY(ID))");
 }
 
 InputWindow::~InputWindow()
@@ -22,6 +24,7 @@ InputWindow::~InputWindow()
 void InputWindow::on_pushButton_clicked()
 {
     double value = ui->lineEdit->text().toDouble();
+    if(value!=NULL){
     QDate cd = QDate::currentDate();
     QString now = cd.toString("yyyy-MM-dd");
     QSqlQuery lastindex;
@@ -36,5 +39,5 @@ void InputWindow::on_pushButton_clicked()
         addquery.bindValue(":THEDATE",now);
         addquery.bindValue(":VALUE",value);
         addquery.exec();
-
+    }
 }
